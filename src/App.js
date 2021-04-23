@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import {useSelector,useDispatch} from 'react-redux';
 
 function App() {
+
+  let dispatch=useDispatch()
+
+let pokreni=(obj)=>{
+  dispatch(obj)
+}
+
+let pokreni2=(obj)=>{
+  dispatch(obj)
+}
+
+
+
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <input type="text"/>
+     <button onClick={()=>pokreni({type: "BEZVEZE"})}>Pokreni BEZVEZE</button>
+     <button onClick={()=>pokreni2({type: "LUDILO"})}>Pokreni LUDILO</button>
+     <button onClick={()=>pokreni({type: "U_POZADINI"})}>U pozadini</button>
+     <p>Uvijek stavi yield ispred nekog efekta tj. saga metode.Ako se nešto čudno događa onda je obično to uzrok. 
+     </p>
     </div>
   );
 }
